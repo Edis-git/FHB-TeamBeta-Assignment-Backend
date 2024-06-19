@@ -34,7 +34,7 @@ jobs:
       run: npm test
 
     - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1.7
+      uses: SonarSource/sonarcloud-github-action@master
       with:
           args: >
             -Dsonar.organization=YOUR_ORGANIZATION_KEY
