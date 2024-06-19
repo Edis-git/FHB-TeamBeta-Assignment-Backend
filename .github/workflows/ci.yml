@@ -25,8 +25,8 @@ jobs:
       run: npm install
 
     - name: Install ESLint
-      run: npm install eslint
-      
+      run: npm install eslint --save-dev
+
     - name: Run ESLint
       run: npx eslint .
     
