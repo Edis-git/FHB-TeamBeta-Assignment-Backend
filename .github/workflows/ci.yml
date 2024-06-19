@@ -37,8 +37,8 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@master
       with:
           args: >
-            -Dsonar.organization=YOUR_ORGANIZATION_KEY
-            -Dsonar.projectKey=YOUR_PROJECT_KEY
+            -Dsonar.organization=edis-git
+            -Dsonar.projectKey=Edis-git_FHB-TeamBeta-Assignment-Backend
             -Dsonar.sources=.
       env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
