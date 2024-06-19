@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 
 let notes = [
@@ -9,8 +9,8 @@ let notes = [
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>');
+app.get("/", (req, res) => {
+  res.send("<h1>Hello World!</h1>");
 });
 
 const generateId = () => {
@@ -18,11 +18,11 @@ const generateId = () => {
   return maxId + 1;
 };
 
-app.post('/api/notes', (request, response) => {
+app.post("/api/notes", (request, response) => {
   const body = request.body;
 
   if (!body.content) {
-    return response.status(400).json({ error: 'content missing' });
+    return response.status(400).json({ error: "content missing" });
   }
 
   const note = {
@@ -37,18 +37,18 @@ app.post('/api/notes', (request, response) => {
   response.json(note);
 });
 
-app.get('/api/notes', (req, res) => {
+app.get("/api/notes", (req, res) => {
   res.json(notes);
 });
 
-app.delete('/api/notes/:id', (request, response) => {
+app.delete("/api/notes/:id", (request, response) => {
   const id = Number(request.params.id);
   notes = notes.filter(note => note.id !== id);
 
   response.status(204).end();
 });
 
-app.get('/api/notes/:id', (request, response) => {
+app.get("/api/notes/:id", (request, response) => {
   const id = Number(request.params.id);
   const note = notes.find(note => note.id === id);
 
