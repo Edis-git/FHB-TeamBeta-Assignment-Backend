@@ -33,6 +33,17 @@ jobs:
     - name: Run tests
       run: npm test
 
+    - name: SonarCloud Scan
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+          npx sonar-scanner \
+            -Dsonar.organization=YOUR_ORGANIZATION_KEY \
+            -Dsonar.projectKey=YOUR_PROJECT_KEY \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
   docker_build:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
