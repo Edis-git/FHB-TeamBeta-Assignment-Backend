@@ -23,11 +23,4 @@
     "nodemon": "^2.0.15",
     "supertest": "^7.0.0"
   }
-  "jest": {
-  "preset": "ts-jest",
-  "testEnvironment": "node",
-  "extensionsToTreatAsEsm": [".ts"],
-  "moduleNameMapper": {
-    "^(\\.{1,2}/.*)\\.js$": "$1"
-  }
 }
